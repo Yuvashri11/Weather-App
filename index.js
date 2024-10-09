@@ -8,9 +8,9 @@ function getWeather(){
     let url=`https://api.weatherapi.com/v1/current.json?key=95084243e35845af8ad160925240510&q=${location}`;
     
     fetch(url)
-        .then((response) => response.json())
-        .then((data) =>{
-            if (data.error) {
+        .then((response)=>response.json())
+        .then((data)=>{
+            if (data.error){
                 weather.textContent=`Error: ${data.error.message}`;
             } else{
                 weather.innerHTML=`<h2>Weather in ${data.location.name}, ${data.location.country}</h2>
